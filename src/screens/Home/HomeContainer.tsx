@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector, shallowEqual, useDispatch } from "react-redux"
+import { Dispatch } from "redux"
 import HomeView from "./HomeView";
 
 const HomeContainer = () => {
+    const products: readonly IProduct[] = useSelector(
+        (state: ProductState) => state.products,
+        shallowEqual
+    )
     const [year, setYear] = useState(1970);
     const [username, setUsername] = useState("Babatunde Ojo")
 
@@ -14,7 +20,7 @@ const HomeContainer = () => {
         getCurrentYear();
     }, [year])
 
-    return <HomeView {...{ username, year }} />
+    return <HomeView {...{ products }} />
 }
 
 export default HomeContainer;

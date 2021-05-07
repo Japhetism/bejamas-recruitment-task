@@ -1,4 +1,4 @@
-import * as productTypes from "./productTypes"
+import * as productTypes from "../actions/productTypes"
 
 const initialState: ProductState = {
   products: [
@@ -27,6 +27,50 @@ const initialState: ProductState = {
         featured: false,
         details: null
     },
+    {
+      id: "3",
+      name: "Egg Balloon",
+      category: "food",
+      price: 93.89,
+      currency: "USD",
+      image: "",
+      bestseller: false,
+      featured: false,
+      details: null
+    },
+    {
+      id: "4",
+      name: "Egg Balloon",
+      category: "food",
+      price: 93.89,
+      currency: "USD",
+      image: "",
+      bestseller: false,
+      featured: false,
+      details: null
+    },
+    {
+      id: "5",
+      name: "Egg Balloon",
+      category: "food",
+      price: 93.89,
+      currency: "USD",
+      image: "",
+      bestseller: false,
+      featured: false,
+      details: null
+    },
+    {
+      id: "6",
+      name: "Egg Balloon",
+      category: "food",
+      price: 93.89,
+      currency: "USD",
+      image: "",
+      bestseller: false,
+      featured: false,
+      details: null
+    }
   ],
 }
 

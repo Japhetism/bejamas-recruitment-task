@@ -1,17 +1,19 @@
 import React, { FC } from 'react'
 import { H1, H5, Container } from "../../components";
+import Product  from "./components/Product"
+import ProductInformation from "./components/ProductInformation"
+import ProductList from "./components/ProductList";
 
 interface HomeViewProps {
-    username: string;
-    year: number;
+   products: any
 }
 
-const HomeView: FC<HomeViewProps> = ({ username, year }) => {
+const HomeView: FC<HomeViewProps> = ({ products }) => {
     return (
-        <Container {...{height: 100, width: 500}}>
-            <H1>{username}</H1>
-            <H5>&copy; {year}</H5>
-        </Container>
+        <>
+            <ProductInformation />
+            <ProductList products={products} />
+        </>
     )
 }
 

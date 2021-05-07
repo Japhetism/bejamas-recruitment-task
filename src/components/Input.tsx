@@ -1,11 +1,19 @@
 import React, { FC } from 'react'
 
 interface InputProps {
-    onChange: () => void;
+    onChange?: () => void;
     type: string;
-    value: string
+    name: string;
+    value?: string
 }
 
-const Input: FC<InputProps> = ({ type, value, onChange }) => <input type={type} value={value} onChange={onChange} />
+const Input: FC<InputProps> = ({ type, name, value, onChange }) => {
+    return (
+        <>
+            <input type={type} value={value} onChange={onChange} />
+            <label>{name}</label>
+        </>
+    )
+}
 
 export default Input;
