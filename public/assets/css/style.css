@@ -263,6 +263,24 @@
   margin-right: 10px;
 }
 
+.product-price-category-container {
+  display: block;
+}
+
+.web-filter-container {
+  display: block;
+}
+
+.filter-icon {
+  height: 30px;
+  width: 30px;
+  border: 2px solid #000000;
+}
+
+.mobile-filter-container {
+  display: none;
+}
+
 
 @media only screen and (max-device-width: 480px) {
   .badge {
@@ -333,11 +351,25 @@
   .main-product-container {
     height: 710px;
   }
-  
-  .float-content-right {
-    float: left;
-    padding-top: 20px;
-    padding-left: 15px;
+
+  .product-price-category-container {
+    display: none;
+  }
+
+  .web-filter-container {
+    display: none;
+  }
+
+  .product-title {
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 33px;
+  }
+
+  .mobile-filter-container {
+    display: block;
   }
 }
 
