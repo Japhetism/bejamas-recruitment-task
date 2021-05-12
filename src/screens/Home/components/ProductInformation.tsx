@@ -33,7 +33,9 @@ const ProductInformation = ()  => {
                         </Span>
                     </Column>
                     <Column {...{className: "col-lg-4"}}>
-                        <H5 {...{className: "about-title"}}>People also buy</H5>
+                        <Row {...{className: "float-content-right"}}>
+                            <H5 {...{className: "about-title"}}>People also buy</H5>
+                        </Row><br/><br/>
                         <Row>
                             <Column {...{className: "col-lg-4 col-4"}}>
                                 <Image src={Photo} {...{className: "people-also-buy-image"}} />
@@ -45,15 +47,15 @@ const ProductInformation = ()  => {
                                 <Image src={Photo2} {...{className: "people-also-buy-image"}} />
                             </Column>
                         </Row>
-                        <Container {...{className: "product-details"}}>
+                        <Container {...{className: "product-details float-content-right"}}>
                             <H5 {...{className: "text-right"}}>Details</H5>
                             <Paragraph {...{className: "text-right"}}>Size: 1020 x 1020 pixel</Paragraph>
                             <Paragraph {...{className: "text-right"}}>Size: 15 mb</Paragraph>
                         </Container>
                     </Column>
                 </Row>
-                <HR />
             </Container>
+            <HR {...{className: "horizontal-line"}}/>
         </>
     )
 }
