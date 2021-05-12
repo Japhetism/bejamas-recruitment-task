@@ -1,9 +1,10 @@
 import React, { ReactNode, FC } from 'react'
 
 interface H2Props {
-    children: ReactNode
+    children: ReactNode;
+    className?: string;
 }
 
-const H2: FC<H2Props> = ({ children }) => <h2>{children}</h2>
+const H2: FC<H2Props> = ({ className, children }) => <h2 className={className}>{children}</h2>
 
 export default H2;

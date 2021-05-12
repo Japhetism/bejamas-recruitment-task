@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Home } from "./screens/Home";
+import HomeContainer from "./screens/Home"
 
 function App() {
-  return <Home />
+  return <HomeContainer />
 }
 
 export default App;

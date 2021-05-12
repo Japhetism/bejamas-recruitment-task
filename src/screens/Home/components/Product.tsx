@@ -1,18 +1,20 @@
 import * as React from "react";
-import { Container, H1, H4, H5, H6, Image, Button } from "../../../components"
+import { Container, H1, H4, H5, H6, Image, Button, Paragraph, Span } from "../../../components"
 
 interface ProductProps {
-    product: IProduct
+    product: any;
 }
 
 const Product: React.FC<ProductProps> = ({ product }) => {
+    console.log("from product", product.data)
+    const { data } = product
     return (
-        <Container {...{height: 470}}>
-            <Image src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" {...{width: 230, height: 300}} />
-            <Button {...{className: "btn", width: 200}}>ADD TO CART</Button>
-            <H6>{product.category}</H6>
-            <H4>{product.name}</H4>
-            <H5>${product.price}</H5>
+        <Container {...{className: "main-product-container"}}>
+            <Image src={data?.image?.src} {...{className: "main-product-image", textPosition: (data.featured || data.bestSeller) ? "top-left" : "", text: data.featured ? "Featured Artwork" : data.bestSeller ?"BestSeller" : ""}} />
+            <Button {...{className: "main-product-button"}}>ADD TO CART</Button>
+            <Span {...{className: "main-product-category capitalize"}}>{data.category}</Span><br/>
+            <Span {...{className: "main-product-name"}}>{data.name}</Span><br/>
+            <Span {...{className: "main-product-price"}}>${data.price}</Span>
         </Container>
     )
 }

@@ -5,6 +5,6 @@ interface RowProps {
     children: ReactNode;
 }
 
-const Row: FC<RowProps> = ({ className, children }) => <div className="row">{children}</div>
+const Row: FC<RowProps> = ({ className, children }) => <div className={`row ${className}`}>{children}</div>
 
 export default Row;

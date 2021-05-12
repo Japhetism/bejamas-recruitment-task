@@ -5,7 +5,7 @@ interface ButtonProps {
     onClick?: () => void;
     color?: string;
     className: string;
-    width: number
+    width?: number
 }
 
 const Button: FC<ButtonProps> = ({ children, color, className, width, onClick }) => <button className={className} style={{backgroundColor: color, width: `${width}px`}} onClick={onClick}>{children}</button>

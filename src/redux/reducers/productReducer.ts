@@ -1,91 +1,19 @@
-import * as productTypes from "../actions/productTypes"
+import {
+    GET_PRODUCTS
+} from '../actions/productAction';
 
-const initialState: ProductState = {
-  products: [
-    {
-      id: "1",
-      name: "Red Bench",
-      category: "people",
-      price: 3.89,
-      currency: "USD",
-      image: {
-          src: "",
-          alt: "",
-      },
-      bestseller: true,
-      featured: false,
-      details: null
-    },
-    {
-        id: "2",
-        name: "Egg Balloon",
-        category: "food",
-        price: 93.89,
-        currency: "USD",
-        image: "",
-        bestseller: false,
-        featured: false,
-        details: null
-    },
-    {
-      id: "3",
-      name: "Egg Balloon",
-      category: "food",
-      price: 93.89,
-      currency: "USD",
-      image: "",
-      bestseller: false,
-      featured: false,
-      details: null
-    },
-    {
-      id: "4",
-      name: "Egg Balloon",
-      category: "food",
-      price: 93.89,
-      currency: "USD",
-      image: "",
-      bestseller: false,
-      featured: false,
-      details: null
-    },
-    {
-      id: "5",
-      name: "Egg Balloon",
-      category: "food",
-      price: 93.89,
-      currency: "USD",
-      image: "",
-      bestseller: false,
-      featured: false,
-      details: null
-    },
-    {
-      id: "6",
-      name: "Egg Balloon",
-      category: "food",
-      price: 93.89,
-      currency: "USD",
-      image: "",
-      bestseller: false,
-      featured: false,
-      details: null
-    }
-  ],
-}
+const initialState = {
+    response: [],
+};
 
-const reducer = (
-    state: ProductState = initialState,
-    action: ProductAction
-  ): ProductState => {
+export const productReducer = (state = initialState, action: any) => {
     switch (action.type) {
-      case productTypes.GET_PRODUCTS:
-        return {
-          ...state,
-          products: state.products,
-        }
+        case GET_PRODUCTS:
+            return {
+                ...state,
+                response: action.payload,
+            };
+            default:
+                return state;
     }
-    return state
-  }
-  
-  export default reducer
+};

@@ -1,0 +1,356 @@
+.header {
+  margin-top: 25px;
+}
+
+.horizontal-line {
+  border: 1px solid #E4E4E4;
+}
+
+.badge {
+  margin-top: 33px;
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+#lblCartCount {
+  font-size: 15px;
+  background: #000000;
+  color: #fff;
+  padding: 3px;
+  vertical-align: top;
+  margin-left: -10px; 
+}
+
+.photo-of-the-day-title {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 35px;
+  color: #000000;
+}
+
+.add-to-cart-button {
+  width: 257px;
+  height: 47px;
+  background: #000000;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.photo-of-the-day {
+  width: 1110px;
+  height: 553px;
+}
+
+.about-container {
+  margin-top: 60px;
+}
+
+.about-title {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+  text-align: right;
+}
+
+.about-subtitle {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 24px;
+  color: #656565;
+}
+
+.title-body {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+  color: #656565;
+}
+
+.people-also-buy-image {
+  width: 117px;
+  height: 147px;
+}
+
+.product-details {
+  margin-top: 30px;
+}
+
+.product-title {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 33px;
+}
+
+.black-color {
+  color: #000000;
+}
+
+.grey-color {
+  color: #9B9B9B;
+}
+
+.filter-options-container {
+  margin-bottom: 15px;
+}
+
+.filter-options-label {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 24px;
+  color: #1D1D1D;
+  height: 24px;
+  left: 60px;
+  position: absolute;
+}
+
+.filter-options-input {
+  width: 23px;
+  height: 23px;
+  left: 101px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+}
+
+.main-product-container {
+  height: 540px;
+}
+
+.main-product-image {
+  width: 251.72px;
+  height: 350.67px;
+  margin-right: 40px;
+  top: 0px;
+}
+
+.main-product-button {
+  width: 252px;
+  height: 46px;
+  background: #000000;
+  font-family: Archivo;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: 0.07em;
+  color: #FFFFFF;
+}
+
+.main-product-category {
+  width: 84.05px;
+  height: 21.79px;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 24px;
+  color: #656565;
+}
+
+.main-product-name {
+  width: 257px;
+  height: 37px;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 37px;
+  color: #000000;
+}
+
+.main-product-price {
+  position: absolute;
+  width: 104px;
+  height: 31px;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 29px;
+  line-height: 32px;
+  color: #656565;
+}
+
+.capitalize { 
+  text-transform:capitalize; 
+  display:inline-block 
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.inactive-pagination {
+  color: #B4B4B4;
+}
+
+.active-pagination {
+  color: #000000;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  .badge {
+    margin-top: -5px;
+    margin-left: -3000px;
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  #lblCartCount {
+    font-size: 15px;
+    background: #000000;
+    color: #fff;
+    padding: 3px;
+    vertical-align: top;
+    margin-left: 25px; 
+  }
+  .add-to-cart-button {
+    width: 350px;
+    height: 47px;
+    background: #000000;
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 0.07em;
+    color: #FFFFFF;
+  }
+  .photo-of-the-day {
+    width: 352px;
+    height: 239px;
+  }
+  .people-also-buy-image {
+    width: 97.57px;
+    height: 122.58px;
+  }
+  .about-title {
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 24px;
+    color: #000000;
+    text-align: left;
+  }
+
+  .main-product-image {
+    width: 362px;
+    height: 502px;
+    top: 0px;
+  }
+
+  .main-product-button {
+    width: 362px;
+    height: 47.98px;
+    background: #000000;
+    font-family: Archivo;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 0.07em;
+    color: #FFFFFF;
+  }
+  
+  .main-product-container {
+    height: 710px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container holding the image and the text */
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 0px;
+    left: 3px;
+    color: black;
+    font-size: 20px;
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 600;
+  }
+  
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: black;
+    font-size: 15px;
+    background-color: white;
+    width: 130px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

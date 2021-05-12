@@ -7,7 +7,7 @@ const ProductRange = ()  => {
             <Container>
                 <Row>
                     <Column {...{className: "col-lg-12"}}>
-                        <H5>Category</H5>
+                        <H5>Price Range</H5>
                         <Container>
                             <Input {...{type: "checkbox", name: "Lower than $200"}} />
                         </Container>
