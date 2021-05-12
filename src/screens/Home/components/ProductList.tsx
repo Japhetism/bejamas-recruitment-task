@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container, H2, H5, Button, Row, Column, Image, Span, HR } from "../../../components"
+import { Container, H2, H5, H3, Button, Row, Column, Image, Span, HR } from "../../../components"
 import ProductCategory from "./ProductCategory";
 import PriceRange from "./PriceRange";
 import Product from "./Product"
@@ -43,7 +43,7 @@ const ProductList: React.FC<ProductListProps> = ({ products , globalProducts}) =
                     </Column>
                     <Column {...{className: "col-lg-2 col-1 float-content-right text-right mobile-filter-container"}}>
                         <Container {...{className: "filter-icon"}}>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	                            viewBox="0 0 512 512" xmlSpace="preserve"
                             >
                                 <g>
@@ -86,6 +86,28 @@ const ProductList: React.FC<ProductListProps> = ({ products , globalProducts}) =
                                 <g></g>
                                 <g></g>
                             </svg>
+                            <Container {...{className: "dropdown-menu dropdown-menu-right dropdown-menu-container filter-options-container"}}>
+                                <Row>
+                                    <Column {...{className: "col-7"}}>
+                                        <H3>Filter</H3>
+                                    </Column>
+                                    <Column {...{className: "col-5"}}>
+                                        <Button {...{className: "dropdown-item text-right cart-close"}}>X</Button>
+                                    </Column>
+                                </Row>
+                                <HR/>
+                                <ProductCategory />    
+                                <PriceRange />
+                                <HR/>
+                                <Row>
+                                    <Column {...{className: "col-6"}}>
+                                        <Button {...{className: "clear-filter-button"}}>CLEAR</Button>
+                                    </Column>
+                                    <Column {...{className: "col-6"}}>
+                                        <Button {...{className: "save-filter-button"}}>SAVE</Button>
+                                    </Column>
+                                </Row>
+                            </Container>
                         </Container>
 
                     </Column>

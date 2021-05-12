@@ -281,6 +281,28 @@
   display: none;
 }
 
+.filter-options-container {
+  margin-left: 10px;
+}
+
+.clear-filter-button {
+  width: 127px;
+  height: 48px;;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  margin: 10px 0px 10px 20px;
+}
+
+.save-filter-button {
+  width: 126px;
+  height: 48px;
+  color: #FFFFFF;
+  background: #000000;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  margin: 10px 0px 10px 20px;
+}
 
 @media only screen and (max-device-width: 480px) {
   .badge {

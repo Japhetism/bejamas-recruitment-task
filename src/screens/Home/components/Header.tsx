@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = () => {
                                 <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/>
                             </svg>
                             <Container {...{className: "dropdown-menu dropdown-menu-right dropdown-menu-container"}}>
-                                <Button {...{className: "dropdown-item text-right car-close"}}>X</Button>
+                                <Button {...{className: "dropdown-item text-right cart-close"}}>X</Button>
                                 <Row {...{className: "cart-details-container"}}>
                                     <Column {...{className: "col-md-7 col-7"}}>
                                         <Span>Samurai King Resting</Span><br/>
