@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Container, Row, Column, HR } from "../../../components";
+import { Container, Row, Column, HR, H4, Button, Span, Image } from "../../../components";
+import Photo from "../../../assets/images/Rectangle 10.png";
 
 interface HeaderProps {
     title?: string;
@@ -10,7 +11,7 @@ const Header: React.FC<HeaderProps> = () => {
         <>
             <Container {...{className: "header"}}>
                 <Row>
-                    <Column {...{className: "col-md-11 col-10"}}>
+                    <Column {...{className: "col-md-6 col-10"}}>
                         <svg width="20" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.32147 21.285C1.0124 21.285 0 20.3016 0 19.1388V2.41514C0 1.19315 1.07178 0.268677 2.32147 0.268677H7.35162C11.8153 0.268677 14.0474 3.13084 14.0474 6.11101C14.0474 8.19808 12.7084 9.47939 10.9228 10.3445C12.7678 11.089 14.6132 12.4313 14.6132 15.0234C14.6132 18.5124 11.8152 21.2853 7.23258 21.2853H2.32147V21.285ZM7.58926 8.49596C8.63104 8.49596 9.88064 7.78026 9.88064 6.17068C9.88064 5.03883 9.34484 4.02456 7.79734 4.02456H4.16679V8.49604H7.58926V8.49596ZM4.16687 12.3118V17.498H7.49987C9.46414 17.498 10.4467 16.5152 10.4467 14.9638C10.4467 13.2645 9.2565 12.3118 7.67856 12.3118H4.16687Z" fill="black"/>
                         </svg>
@@ -36,21 +37,48 @@ const Header: React.FC<HeaderProps> = () => {
                             <path d="M10.9463 0.430176C11.9887 0.430176 12.9999 1.26449 12.9999 2.33799C12.9999 3.41078 12.1079 4.21592 10.9463 4.21592H3.02094C1.86081 4.21592 0.967285 3.41078 0.967285 2.33799C0.967285 1.26449 1.97985 0.430176 3.02094 0.430176H10.9463Z" fill="black"/>
                         </svg>
                     </Column>
-                    <Column {...{className: "col-md-1 col-2"}}> 
-                        <div className="btn-group">
+                    <Column {...{className: "col-md-6 col-2"}}> 
+                        <Container {...{className: "btn-group float-content-right"}}>
                             <svg className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" height="27pt" viewBox="0 -31 512.00026 512" width="27pt" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m164.960938 300.003906h.023437c.019531 0 .039063-.003906.058594-.003906h271.957031c6.695312 0 12.582031-4.441406 14.421875-10.878906l60-210c1.292969-4.527344.386719-9.394532-2.445313-13.152344-2.835937-3.757812-7.269531-5.96875-11.976562-5.96875h-366.632812l-10.722657-48.253906c-1.527343-6.863282-7.613281-11.746094-14.644531-11.746094h-90c-8.285156 0-15 6.714844-15 15s6.714844 15 15 15h77.96875c1.898438 8.550781 51.3125 230.917969 54.15625 243.710938-15.941406 6.929687-27.125 22.824218-27.125 41.289062 0 24.8125 20.1875 45 45 45h272c8.285156 0 15-6.714844 15-15s-6.714844-15-15-15h-272c-8.269531 0-15-6.730469-15-15 0-8.257812 6.707031-14.976562 14.960938-14.996094zm312.152343-210.003906-51.429687 180h-248.652344l-40-180zm0 0"/>
                                 <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/>
                                 <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/>
                             </svg>
-                            <div className="dropdown-menu pull-left">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <a className="dropdown-item" href="#">Something else here</a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>                   
+                            <Container {...{className: "dropdown-menu dropdown-menu-right dropdown-menu-container"}}>
+                                <Button {...{className: "dropdown-item text-right car-close"}}>X</Button>
+                                <Row {...{className: "cart-details-container"}}>
+                                    <Column {...{className: "col-md-7 col-7"}}>
+                                        <Span>Samurai King Resting</Span><br/>
+                                        <Span>$10000.00</Span>
+                                    </Column>
+                                    <Column {...{className: "col-md-5 col-5"}}>
+                                        <Image src={Photo} {...{className: "cart-image"}} />
+                                    </Column>
+                                </Row>
+                                <HR/>
+                                <Row {...{className: "cart-details-container"}}>
+                                    <Column {...{className: "col-md-7 col-7"}}>
+                                        <Span>Samurai King Resting</Span><br/>
+                                        <Span>$10000.00</Span>
+                                    </Column>
+                                    <Column {...{className: "col-md-5 col-5"}}>
+                                        <Image src={Photo} {...{className: "cart-image"}} />
+                                    </Column>
+                                </Row>
+                                <HR/>
+                                <Row {...{className: "cart-details-container"}}>
+                                    <Column {...{className: "col-md-7 col-7"}}>
+                                        <Span>Samurai King Resting</Span><br/>
+                                        <Span>$10000.00</Span>
+                                    </Column>
+                                    <Column {...{className: "col-md-5 col-5"}}>
+                                        <Image src={Photo} {...{className: "cart-image"}} />
+                                    </Column>
+                                </Row>
+                                <HR/>
+                                <Button {...{className: "clear-cart-button"}}>CLEAR</Button>
+                            </Container>
+                        </Container>                   
                         {/* <span className='badge badge-warning' id='lblCartCount'> 5 </span> */}
                     </Column>
                 </Row>

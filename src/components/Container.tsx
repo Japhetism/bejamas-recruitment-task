@@ -1,7 +1,7 @@
 import React, { ReactNode, FC } from 'react'
 
 interface ContainerProps {
-    children: ReactNode;
+    children?: ReactNode;
     height?: number;
     width?: number;
     color?: string;
