@@ -1,15 +1,14 @@
 import React, { FC } from 'react'
-import Container from "./Container";
 
 interface SelectProps {
-    onChange?: () => void;
+    onChange(option: string): any
 }
 
 const Select: FC<SelectProps> = ({ onChange }) => {
     return (
-        <select>
-            <option>Price</option>
-            <option>Alphabetically</option>
+        <select onChange={event => onChange(event.target.value)}>
+            <option value="price">Price</option>
+            <option value="name">Alphabetically</option>
         </select>
     )
 }

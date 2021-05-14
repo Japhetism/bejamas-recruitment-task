@@ -260,6 +260,8 @@
 
 .sort {
   margin-right: 10px;
+  background-color: #FFFFFF;
+  border: 0px solid #FFFFFF;
 }
 
 .product-price-category-container {
