@@ -20,8 +20,6 @@ interface HomeViewProps {
 }
 
 const HomeView: FC<HomeViewProps> = ({ products , globalProducts, gotoPage, activePage, addItemToCart, cartItems, clearCart, sortGlobalProducts, setSortCategoryOption }) => {
-    console.log("all cart items from home ", cartItems)
-    console.log("all products are ", products)
     return (
         <Container {...{className: "container"}}>
             <Header cartItems={cartItems} clearCart={clearCart} />

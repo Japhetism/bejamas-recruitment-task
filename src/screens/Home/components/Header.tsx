@@ -9,7 +9,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ cartItems, clearCart }) => {
-    console.log("From header ", cartItems)
     return (
         <>
             <Container {...{className: "header"}}>

@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
 
 interface SelectProps {
-    onChange(option: string): any
+    onChange(option: string): any;
+    data?: any;
 }
 
-const Select: FC<SelectProps> = ({ onChange }) => {
+const Select: FC<SelectProps> = ({ onChange, data }) => {
     return (
         <select onChange={event => onChange(event.target.value)}>
-            <option value="price">Price</option>
-            <option value="name">Alphabetically</option>
+            {data.map((option:any) => <option key={option.value} value={option.value}>{option.label}</option>)}
         </select>
     )
 }

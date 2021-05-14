@@ -10,7 +10,6 @@ const Product: React.FC<ProductProps> = ({ product, addItemToCart }) => {
     const addProductToCart = () => {
         addItemToCart(product)
     }
-    console.log("from product", product.data)
     const { data } = product
     return (
         <Container {...{className: "main-product-container"}}>

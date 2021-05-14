@@ -4,6 +4,7 @@ import ProductCategory from "./ProductCategory";
 import PriceRange from "./PriceRange";
 import Product from "./Product"
 import Pagination from "./Pagination"
+import { getSortCategories } from "../../../fixtures/sortCategory";
 
 interface ProductListProps {
     products: any;
@@ -40,7 +41,7 @@ const ProductList: React.FC<ProductListProps> = ({ products , globalProducts, go
                             Sort By
                         </Span>
                         <Span {...{className: "black-color"}}>
-                            <Select onChange={setSortCategoryOption} />
+                            <Select data={getSortCategories()} onChange={setSortCategoryOption} />
                         </Span>
                     </Column>
                     <Column {...{className: "col-lg-2 col-1 float-content-right text-right mobile-filter-container"}}>

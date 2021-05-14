@@ -53,30 +53,12 @@ const HomeContainer = (props: any) => {
     }
 
     const sortGlobalProducts = () => {
-        // let sortedGlobalProducts: any = [];
-        // //let nextSortType = "";
-        // sortedGlobalProducts = globalProducts.sort((a:any, b:any) => {
-        //     if (a.data.price > b.data.price)
-        //       return -1;
-        //     if (a.data.price < b.data.price)
-        //       return 1;
-        //     return 0;
-        //   })
-        // if(sortType === "ascending") {
-        //     sortedGlobalProducts = globalProducts.sort(((a:any, b:any) => parseFloat(a.data.price) - parseFloat(b.data.price)));
-        //     nextSortType = "descending";
-        // }else{
-        //     sortedGlobalProducts = globalProducts.sort(((a:any, b:any) => parseFloat(b.data.price) - parseFloat(a.data.price)));
-        //     nextSortType = "ascending"
-        // }
         setSortType(sortType === "ascending" ? "descending" : "ascending")
-
         handlePagination(productSorting(globalProducts, sortType, sortCategory))
         setGlobalProducts(productSorting(globalProducts, sortType, sortCategory))
     }
 
     const setSortCategoryOption = (option: string) => {
-        console.log("sort caetgory option ", option)
         setSortCategory(option)
     }
 
