@@ -19,9 +19,9 @@ const Pagination: React.FC<PaginationProps> = ({ activePage, dataCount, gotoPage
 
     return (
         <Container {...{className: "pagination"}}>
-            <a className={activePage === 1 ? "inactive-pagination" : "active-pagination"} onClick={() => gotoPage(1)}>&lt;</a>
+            {activePage != 1 && <a className={activePage === 1 ? "inactive-pagination" : "active-pagination"} onClick={() => gotoPage(1)}>&lt;</a>}
             {getPaginations().map(data => <a className={activePage === data ? "active-pagination" : "inactive-pagination"} key={data} onClick={() => gotoPage(data)}>{data}</a>)}
-            <a className={activePage === (Math.ceil(dataCount/6)) ? "inactive-pagination" : "active-pagination"} onClick={() => gotoPage((Math.ceil(dataCount/6)))}>&gt;</a>
+            {activePage != Math.ceil(dataCount/6) && <a className={activePage === (Math.ceil(dataCount/6)) ? "inactive-pagination" : "active-pagination"} onClick={() => gotoPage((Math.ceil(dataCount/6)))}>&gt;</a>}
         </Container>
     )
 }
