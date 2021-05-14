@@ -11,9 +11,10 @@ interface ProductListProps {
     globalProducts?: any;
     gotoPage(data: number): any;
     activePage?: number;
+    addItemToCart(item: any): any;
 }
 
-const ProductList: React.FC<ProductListProps> = ({ products , globalProducts, gotoPage, activePage }) => {
+const ProductList: React.FC<ProductListProps> = ({ products , globalProducts, gotoPage, activePage, addItemToCart }) => {
     return (
         <>
             <Container {...{className: "container"}}>
@@ -94,7 +95,7 @@ const ProductList: React.FC<ProductListProps> = ({ products , globalProducts, go
                                         <H3>Filter</H3>
                                     </Column>
                                     <Column {...{className: "col-5"}}>
-                                        <Button {...{className: "dropdown-item text-right cart-close"}}>X</Button>
+                                        <Button {...{className: "dropdown-item text-right cart-close"}} onClick={() => console.log("dgdgdgdggd")}>X</Button>
                                     </Column>
                                 </Row>
                                 <HR/>
@@ -103,10 +104,10 @@ const ProductList: React.FC<ProductListProps> = ({ products , globalProducts, go
                                 <HR/>
                                 <Row>
                                     <Column {...{className: "col-6"}}>
-                                        <Button {...{className: "clear-filter-button"}}>CLEAR</Button>
+                                        <Button {...{className: "clear-filter-button"}} onClick={() => console.log("dgdgdgdggd")}>CLEAR</Button>
                                     </Column>
                                     <Column {...{className: "col-6"}}>
-                                        <Button {...{className: "save-filter-button"}}>SAVE</Button>
+                                        <Button {...{className: "save-filter-button"}} onClick={() => console.log("dgdgdgdggd")}>SAVE</Button>
                                     </Column>
                                 </Row>
                             </Container>
@@ -126,6 +127,7 @@ const ProductList: React.FC<ProductListProps> = ({ products , globalProducts, go
                                     <Product
                                         key={product.ts}
                                         product={product}
+                                        addItemToCart={(item) => addItemToCart(item)}
                                     />
                                 </Column>
                             ))}   

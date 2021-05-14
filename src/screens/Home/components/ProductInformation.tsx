@@ -14,7 +14,7 @@ const ProductInformation = ()  => {
                         <H2 {...{className: "photo-of-the-day-title"}}>Samurai King Resting</H2>
                     </Column>
                     <Column {...{className: "col-md-3 col-12"}}>
-                        <Button {...{className: "add-to-cart-button"}}>ADD TO CART</Button>
+                        <Button {...{className: "add-to-cart-button"}} onClick={() => console.log("dgdgdgdggd")}>ADD TO CART</Button>
                     </Column>
                 </Row>
                 <Row>

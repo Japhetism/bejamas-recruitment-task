@@ -13,6 +13,7 @@ const HomeContainer = (props: any) => {
     const  [products, setProducts] = useState([])
     const [pageSize, setPageSize] = useState(6);
     const [activePage, setActivePage] = useState(1);
+    const [cartItems, setCartItems] = useState([]);
 
     const getCurrentYear = () => {
         const year = new Date().getFullYear();
@@ -37,6 +38,18 @@ const HomeContainer = (props: any) => {
         setProducts(result)
     }
 
+    const addItemToCart = (item: any) => {
+        const allCartItems : any = []
+        allCartItems.push(item);
+        console.log("Item to add is ", item)
+        console.log("all cart items ", allCartItems)
+        console.log("cart items count ", allCartItems.length)
+        if(cartItems.length > 0) {
+            cartItems.map(cartItem => allCartItems.push(cartItem))
+        }
+        setCartItems(allCartItems)
+    }
+
     useEffect(() => {
         getAllProducts.then((res: any) => {
             setGlobalProducts(res);
@@ -46,7 +59,7 @@ const HomeContainer = (props: any) => {
           });
     }, [])
 
-    return <HomeView {...{ products, globalProducts, gotoPage, activePage }} />
+    return <HomeView {...{ products, globalProducts, gotoPage, activePage, addItemToCart, cartItems }} />
 }
 
 export default HomeContainer;
