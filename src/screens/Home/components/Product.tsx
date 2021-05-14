@@ -10,7 +10,10 @@ const Product: React.FC<ProductProps> = ({ product }) => {
     const { data } = product
     return (
         <Container {...{className: "main-product-container"}}>
-            <Image src={data?.image?.src} {...{className: "main-product-image", textPosition: (data.featured || data.bestSeller) ? "top-left" : "", text: data.featured ? "Featured Artwork" : data.bestSeller ?"BestSeller" : ""}} />
+            <Container {...{className: "product-container"}}>
+                <Image src={data?.image?.src} {...{className: "main-product-image", textPosition: (data.featured || data.bestSeller) ? "top-left" : "", text: data.featured ? "Featured Artwork" : data.bestSeller ?"BestSeller" : ""}} />
+                <Button {...{className: "btn"}}>ADD TO CART</Button>
+            </Container>
             <Button {...{className: "main-product-button"}}>ADD TO CART</Button>
             <Span {...{className: "main-product-category capitalize"}}>{data.category}</Span><br/>
             <Span {...{className: "main-product-name"}}>{data.name}</Span><br/>

@@ -12,18 +12,28 @@ const HomeContainer = (props: any) => {
     const [globalProducts, setGlobalProducts] = useState([])
     const  [products, setProducts] = useState([])
     const [pageSize, setPageSize] = useState(6);
+    const [activePage, setActivePage] = useState(1);
 
     const getCurrentYear = () => {
-        console.log("updating current year...")
         const year = new Date().getFullYear();
         setYear(year);
     }
 
     const handlePagination = (products: any) => {
         const result : any = [];
-        for(let i = pageSize - 6; i < pageSize; i++) {
+        for(let i = pageSize - pageSize; i < pageSize; i++) {
             result.push(products[i])
         }
+        setProducts(result)
+    }
+
+    const gotoPage = (pageNumber: number) => {
+        const displayNumber = pageSize * pageNumber
+        const result : any = [];
+        for(let i = displayNumber - pageSize; i < displayNumber; i++) {
+            result.push(globalProducts[i])
+        }
+        setActivePage(pageNumber)
         setProducts(result)
     }
 
@@ -36,11 +46,7 @@ const HomeContainer = (props: any) => {
           });
     }, [])
 
-    // useEffect(() => {
-    //     handlePagination()
-    // }, [products])
-
-    return <HomeView {...{ products, globalProducts }} />
+    return <HomeView {...{ products, globalProducts, gotoPage, activePage }} />
 }
 
 export default HomeContainer;

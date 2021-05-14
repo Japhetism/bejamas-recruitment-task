@@ -8,10 +8,12 @@ import Pagination from "./Pagination"
 interface ProductListProps {
     products: any;
     data?: any;
-    globalProducts?: any
+    globalProducts?: any;
+    gotoPage(data: number): any;
+    activePage?: number;
 }
 
-const ProductList: React.FC<ProductListProps> = ({ products , globalProducts}) => {
+const ProductList: React.FC<ProductListProps> = ({ products , globalProducts, gotoPage, activePage }) => {
     return (
         <>
             <Container {...{className: "container"}}>
@@ -128,7 +130,7 @@ const ProductList: React.FC<ProductListProps> = ({ products , globalProducts}) =
                                 </Column>
                             ))}   
                         </Row>
-                        <Pagination dataCount={globalProducts.length}/>
+                        <Pagination dataCount={globalProducts.length} gotoPage={(data) => gotoPage(data)} activePage={activePage} />
                     </Column>
                 </Row>
             </Container>
