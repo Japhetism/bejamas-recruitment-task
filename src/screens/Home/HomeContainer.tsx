@@ -50,6 +50,11 @@ const HomeContainer = (props: any) => {
         setCartItems(allCartItems)
     }
 
+    const clearCart = () => {
+        console.log("clear cart items")
+        setCartItems([])
+    }
+
     useEffect(() => {
         getAllProducts.then((res: any) => {
             setGlobalProducts(res);
@@ -59,7 +64,7 @@ const HomeContainer = (props: any) => {
           });
     }, [])
 
-    return <HomeView {...{ products, globalProducts, gotoPage, activePage, addItemToCart, cartItems }} />
+    return <HomeView {...{ products, globalProducts, gotoPage, activePage, addItemToCart, cartItems, clearCart }} />
 }
 
 export default HomeContainer;

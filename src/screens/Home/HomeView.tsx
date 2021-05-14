@@ -14,14 +14,15 @@ interface HomeViewProps {
    gotoPage(data: number): any;
    activePage?: number;
    addItemToCart(item: any): any;
+   clearCart(): any;
 }
 
-const HomeView: FC<HomeViewProps> = ({ products , globalProducts, gotoPage, activePage, addItemToCart, cartItems }) => {
+const HomeView: FC<HomeViewProps> = ({ products , globalProducts, gotoPage, activePage, addItemToCart, cartItems, clearCart }) => {
     console.log("all cart items from home ", cartItems)
     console.log("all products are ", products)
     return (
         <Container {...{className: "container"}}>
-            <Header cartItems={cartItems} />
+            <Header cartItems={cartItems} clearCart={clearCart} />
             <ProductInformation />
             <ProductList products={products} globalProducts={globalProducts} gotoPage={(data) => gotoPage(data)} activePage={activePage} addItemToCart={(item: any) => addItemToCart(item)} />
         </Container>

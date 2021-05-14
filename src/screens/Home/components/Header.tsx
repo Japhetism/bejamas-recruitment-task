@@ -5,9 +5,10 @@ import Photo from "../../../assets/images/Rectangle 10.png";
 interface HeaderProps {
     title?: string;
     cartItems?: any;
+    clearCart(): any;
 }
 
-const Header: React.FC<HeaderProps> = ({ cartItems }) => {
+const Header: React.FC<HeaderProps> = ({ cartItems, clearCart }) => {
     console.log("From header ", cartItems)
     return (
         <>
@@ -49,37 +50,21 @@ const Header: React.FC<HeaderProps> = ({ cartItems }) => {
                             {cartItems.length > 0 && <span className='badge badge-warning' id='lblCartCount'>{cartItems.length}</span>}
                             <Container {...{className: "dropdown-menu dropdown-menu-right dropdown-menu-container"}}>
                                 <Button {...{className: "dropdown-item text-right cart-close"}} onClick={() => console.log("dgdgdgdggd")}>X</Button>
-                                <Row {...{className: "cart-details-container"}}>
+                                {cartItems.map((cartItem:any) => { 
+                                const { data } = cartItem;
+                                return ( <Row key={cartItem.ts} {...{className: "cart-details-container"}}>
                                     <Column {...{className: "col-md-7 col-7"}}>
-                                        <Span>Samurai King Resting</Span><br/>
-                                        <Span>$10000.00</Span>
+                                        <Span>{data.name}</Span><br/>
+                                        <Span>${data.price}</Span>
                                     </Column>
                                     <Column {...{className: "col-md-5 col-5"}}>
-                                        <Image src={Photo} {...{className: "cart-image"}} />
+                                        <Image src={data?.image?.src} {...{className: "cart-image"}} />
                                     </Column>
+                                    <HR/>
                                 </Row>
-                                <HR/>
-                                <Row {...{className: "cart-details-container"}}>
-                                    <Column {...{className: "col-md-7 col-7"}}>
-                                        <Span>Samurai King Resting</Span><br/>
-                                        <Span>$10000.00</Span>
-                                    </Column>
-                                    <Column {...{className: "col-md-5 col-5"}}>
-                                        <Image src={Photo} {...{className: "cart-image"}} />
-                                    </Column>
-                                </Row>
-                                <HR/>
-                                <Row {...{className: "cart-details-container"}}>
-                                    <Column {...{className: "col-md-7 col-7"}}>
-                                        <Span>Samurai King Resting</Span><br/>
-                                        <Span>$10000.00</Span>
-                                    </Column>
-                                    <Column {...{className: "col-md-5 col-5"}}>
-                                        <Image src={Photo} {...{className: "cart-image"}} />
-                                    </Column>
-                                </Row>
-                                <HR/>
-                                <Button {...{className: "clear-cart-button"}} onClick={() => console.log("dgdgdgdggd")}>CLEAR</Button>
+                                )})}
+                                {cartItems.length > 0 && <Button {...{className: "clear-cart-button"}} onClick={() => clearCart()}>CLEAR</Button>}
+                                {cartItems.length <= 0 && <Span>No item found</Span>}
                             </Container>
                         </Container>                   
                     </Column>
