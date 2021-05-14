@@ -14,6 +14,7 @@ const HomeContainer = (props: any) => {
     const [pageSize, setPageSize] = useState(6);
     const [activePage, setActivePage] = useState(1);
     const [cartItems, setCartItems] = useState([]);
+    const [sortType, setSortType] = useState('ascending')
 
     const getCurrentYear = () => {
         const year = new Date().getFullYear();
@@ -55,6 +56,24 @@ const HomeContainer = (props: any) => {
         setCartItems([])
     }
 
+    const sortGlobalProducts = () => {
+        console.log("sorting is in progress...")
+        console.log("sort type is ", sortType)
+        let sortedGlobalProducts: any = [];
+        let nextSortType = "";
+        if(sortType === "ascending") {
+            sortedGlobalProducts = globalProducts.sort(((a:any, b:any) => parseFloat(a.data.price) - parseFloat(b.data.price)));
+            nextSortType = "descending";
+        }else{
+            sortedGlobalProducts = globalProducts.sort(((a:any, b:any) => parseFloat(b.data.price) - parseFloat(a.data.price)));
+            nextSortType = "ascending"
+        }
+        console.log("sorted global product ", sortedGlobalProducts)
+        setSortType(nextSortType)
+        handlePagination(sortedGlobalProducts)
+        setGlobalProducts(sortedGlobalProducts)
+    }
+
     useEffect(() => {
         getAllProducts.then((res: any) => {
             setGlobalProducts(res);
@@ -64,7 +83,7 @@ const HomeContainer = (props: any) => {
           });
     }, [])
 
-    return <HomeView {...{ products, globalProducts, gotoPage, activePage, addItemToCart, cartItems, clearCart }} />
+    return <HomeView {...{ products, globalProducts, gotoPage, activePage, addItemToCart, cartItems, clearCart, sortGlobalProducts }} />
 }
 
 export default HomeContainer;

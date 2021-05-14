@@ -13,3 +13,4 @@ export { default as HR } from "./HR";
 export { default as Row } from "./Row";
 export { default as Column } from "./Column";
 export { default as Paragraph } from "./Paragraph";
+export { default as Select } from "./Select";
